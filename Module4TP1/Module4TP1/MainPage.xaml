@@ -3,19 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:Module4TP1"
              mc:Ignorable="d"
              x:Class="Module4TP1.MainPage">
 
     <StackLayout Orientation="Vertical">
         <!-- Header -->
-        <ContentView BackgroundColor="#58B0F0">
-            <StackLayout Orientation="Horizontal" Margin="10, 25">
-                <ImageButton Source="pencil.png" WidthRequest="25" BackgroundColor="Transparent"></ImageButton>
-                <Label Text="Accueil" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" 
-                       FontAttributes="Bold" FontSize="20" TextColor="White"></Label>
-                <ImageButton Source="search.png" WidthRequest="25" BackgroundColor="Transparent"></ImageButton>
-            </StackLayout>
-        </ContentView>
+        <views:Header />
 
         <!-- MAIN BODY -->
         <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand"
@@ -40,7 +34,7 @@
                 </StackLayout>
 
 
-                <StackLayout x:Name="listTweet" Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                <!--<StackLayout x:Name="listTweet" Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                     VerticalOptions="Fill" IsVisible="false">
 
                     <Image Margin="10" WidthRequest="75" Aspect="AspectFit" 
@@ -54,7 +48,6 @@
                     </StackLayout>
                 </StackLayout>
                 
-                <!-- Buttons below-->
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                         VerticalOptions="Fill">
                     <ImageButton Source="reply.png" WidthRequest="25" HorizontalOptions="FillAndExpand" 
@@ -63,22 +56,11 @@
                                  BackgroundColor="Transparent"></ImageButton>
                     <ImageButton Source="favorite.png" WidthRequest="25" HorizontalOptions="FillAndExpand" 
                                  BackgroundColor="Transparent"></ImageButton>
-                </StackLayout>
+                </StackLayout>-->
             </StackLayout>
         </ScrollView>
 
         <!-- FOOTER -->
-        <StackLayout Orientation="Horizontal" BackgroundColor="LightGray" HorizontalOptions="Fill"
-                VerticalOptions="Fill" HeightRequest="75">
-            
-            <Label Text="Fil" HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="Center"/>
-            <Label Text="Notification" HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="Center"/>
-            <Label Text="Messages" HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="Center"/>
-            <Label Text="Moi" HorizontalOptions="CenterAndExpand"
-                    VerticalOptions="Center"/>
-        </StackLayout>
+        <views:Footer />
     </StackLayout>
 </ContentPage>

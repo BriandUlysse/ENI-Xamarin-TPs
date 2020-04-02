@@ -22,7 +22,7 @@ namespace Module4TP1
             this.twitterService = new TwitterService();
         }
 
-        private void btnConnexion_Clicked(object sender, EventArgs e)
+        private async void btnConnexion_Clicked(object sender, EventArgs e)
         {
             Console.WriteLine("btn clicked");
 
@@ -55,8 +55,9 @@ namespace Module4TP1
                 this.error.IsVisible = false;
                 if (this.twitterService.authenticate(id, mdp))
                 {
-                    this.listTweet.IsVisible = true;
-                    this.formConexion.IsVisible = false;
+                    await Navigation.PushAsync(new TweetList());
+                    /*this.listTweet.IsVisible = true;
+                    this.formConexion.IsVisible = false;*/
                 }
             }
         }
